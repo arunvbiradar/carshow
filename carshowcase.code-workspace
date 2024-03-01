@@ -1,0 +1,18 @@
+{
+  "folders": [
+    {
+      "path": ".",
+    },
+  ],
+  "settings": {
+    "emeraldwalk.runonsave": {
+      "commands": [
+        {
+          "match": ".*",
+          "isAsync": true,
+          "cmd": "npx prettier . --write",
+        },
+      ],
+    },
+  },
+}
