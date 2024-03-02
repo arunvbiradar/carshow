@@ -1,12 +1,12 @@
 import React from "react";
-import BoxLayout from "../components/ui/BoxLayout";
+import BoxLayout from "../components/layout/BoxLayout";
 import Header from "../components/layout/Header";
 import Breadcrumb from "../components/ui/Breadcrumb";
 import PageTitle from "../components/ui/PageTitle";
 import Jumbotron from "../components/ui/Jumbotron";
-import ProductList from "../components/ui/products/ProductList";
+import ProductList from "../components/layout/products/ProductList";
 import SectionTitle from "../components/ui/SectionTitle";
-import CompareProducts from "../components/ui/products/CompareProducts";
+import CompareProducts from "../components/layout/products/CompareProducts";
 
 const Make = () => {
   return (

@@ -1,12 +1,12 @@
 import React from "react";
-import BoxLayout from "../components/ui/BoxLayout";
+import BoxLayout from "../components/layout/BoxLayout";
 import Header from "../components/layout/Header";
 import PageTitle from "../components/ui/PageTitle";
 import Breadcrumb from "../components/ui/Breadcrumb";
-import ProductGallery from "../components/ui/products/ProductGallery";
+import ProductGallery from "../components/layout/products/ProductGallery";
 import SectionTitle from "../components/ui/SectionTitle";
-import ProductTopSpecs from "../components/ui/products/ProductTopSpecs";
-import CompareProducts from "../components/ui/products/CompareProducts";
+import ProductTopSpecs from "../components/layout/products/ProductTopSpecs";
+import CompareProducts from "../components/layout/products/CompareProducts";
 import Footer from "../components/layout/Footer";
 
 const Model = () => {
@@ -154,7 +154,7 @@ const Model = () => {
           </div>
         </div>
         <div className="w-1/4 px-4 hidden xl:block">
-          <ProductTopSpecs />
+          <ProductTopSpecs optionalRow={true} />
         </div>
       </section>
       <Footer />

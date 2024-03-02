@@ -33,4 +33,7 @@
   .icon-rounded {
     @apply bg-white rounded-md p-3 border-[1px] border-gray-100;
   }
+  .form-control {
+    @apply py-2 px-4 !outline-none border-2 rounded-md block min-w-48 w-full;
+  }
 }

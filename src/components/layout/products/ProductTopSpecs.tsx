@@ -10,7 +10,7 @@ const ProductTopSpecs = ({
 }) => {
   return (
     <div
-      className={`${optionalRow && "sticky"} top-8 ${className ? className : ""}`}
+      className={`${optionalRow && "sticky"} top-16 ${className ? className : ""}`}
     >
       <div className="bg-gray-100 p-6 rounded-md border-b-2 mb-6 xl:8">
         <h2 className="text-4xl font-bold">$2000</h2>
