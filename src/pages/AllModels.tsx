@@ -15,7 +15,7 @@ const AllModels = () => {
       <Breadcrumb levels={1} page="All Models" />
       <PageTitle>All Models</PageTitle>
       <Jumbotron />
-      <ProductSearch />
+      <ProductSearch page="search" />
       <ProductList list={24} />
       <Footer />
     </BoxLayout>
