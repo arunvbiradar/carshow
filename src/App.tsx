@@ -5,6 +5,7 @@ import Make from "./pages/Make";
 import NotFound from "./pages/NotFound";
 import Model from "./pages/Model";
 import AllModels from "./pages/AllModels";
+import AllMakes from "./pages/AllMakes";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/make" element={<Make />} />
+        <Route path="/all-makes" element={<AllMakes />} />
         <Route path="/model" element={<Model />} />
         <Route path="/all-models" element={<AllModels />} />
         <Route path="*" element={<NotFound />} />

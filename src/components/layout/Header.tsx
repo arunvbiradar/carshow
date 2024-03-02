@@ -12,6 +12,9 @@ const Header = () => {
             <Link to="/make">Make</Link>
           </li>
           <li>
+            <Link to="/all-makes">All Makes</Link>
+          </li>
+          <li>
             <Link to="/model">Model</Link>
           </li>
           <li>
