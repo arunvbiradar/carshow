@@ -3,8 +3,29 @@
 @tailwind utilities;
 
 @layer base {
-  button {
-    @apply rounded-full bg-gray-900 text-gray-200 px-6 py-2 leading-7 hover:bg-gray-700 border-2;
+  /* width */
+  ::-webkit-scrollbar {
+    @apply w-1.5 h-1.5;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-orange-200;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-orange-400 rounded-full;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-orange-500;
+  }
+
+  button,
+  .btn {
+    @apply rounded-full bg-gray-900 text-gray-200 px-6 py-2 leading-7 hover:bg-gray-800 border-2 border-gray-900 hover:border-gray-800;
   }
 }
 
