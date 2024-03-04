@@ -45,10 +45,11 @@ export const fetchManufacturerDetails = createAsyncThunk(
 
 export const fetchMakesForManufacturers = createAsyncThunk(
   "manufacturers/fetchMakesForManufacturers",
-  async (id?: string) => {
+  async (type: { id?: string; name?: string }) => {
     try {
+      let key = type.hasOwnProperty("id") ? type.id : type.name;
       const response = await axios.get<{ Results: MakeManufacturer[] }>(
-        `https://vpic.nhtsa.dot.gov/api/vehicles/GetMakeForManufacturer/${id}?format=json`,
+        `https://vpic.nhtsa.dot.gov/api/vehicles/GetMakeForManufacturer/${key}?format=json`,
       );
       return response.data.Results;
     } catch (error) {
@@ -60,7 +61,11 @@ export const fetchMakesForManufacturers = createAsyncThunk(
 export const manufacturerSlice = createSlice({
   name: "manufacturer",
   initialState,
-  reducers: {},
+  reducers: {
+    resetManufacturers(state) {
+      state.manufacturers = [];
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchManufacturers.pending, (state) => {
@@ -113,5 +118,7 @@ export const manufacturerSlice = createSlice({
       });
   },
 });
+
+export const { resetManufacturers } = manufacturerSlice.actions;
 
 export default manufacturerSlice.reducer;

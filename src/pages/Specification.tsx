@@ -12,9 +12,15 @@ const Specification = () => {
   return (
     <BoxLayout>
       <Header />
-      <Breadcrumb levels={1} page="Specifications" />
+      <Breadcrumb
+        levels={1}
+        page={name}
+        levelPage={{ url: "all-specifications", page: "specifications" }}
+      />
       <PageTitle>{name}</PageTitle>
-      <SingleSpec id={id} />
+      <section className="shrink-0 mb-auto">
+        <SingleSpec id={id} />
+      </section>
       <Footer />
     </BoxLayout>
   );

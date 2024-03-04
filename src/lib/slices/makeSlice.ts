@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { Make, MakeDetail, MakeState } from "../../types";
+import { MakeCar, MakeDetail, MakeState } from "../../types";
 
 const initialState: MakeState = {
   makes: [],
@@ -9,16 +9,19 @@ const initialState: MakeState = {
   error: null,
 };
 
-export const fetchMakes = createAsyncThunk("makes/fetchMakes", async () => {
-  try {
-    const response = await axios.get<{ Results: Make[] }>(
-      `https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json`,
-    );
-    return response.data.Results;
-  } catch (error) {
-    throw new Error("Failed to fetch makes data");
-  }
-});
+export const fetchMakes = createAsyncThunk(
+  "makes/fetchMakes",
+  async (type: string) => {
+    try {
+      const response = await axios.get<{ Results: MakeCar[] }>(
+        `https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/${type}?format=json`,
+      );
+      return response.data.Results;
+    } catch (error) {
+      throw new Error("Failed to fetch makes data");
+    }
+  },
+);
 
 export const fetchMakeDetails = createAsyncThunk(
   "makes/fetchMakeDetails",
@@ -37,7 +40,11 @@ export const fetchMakeDetails = createAsyncThunk(
 export const makeSlice = createSlice({
   name: "makes",
   initialState,
-  reducers: {},
+  reducers: {
+    resetBodyType(state) {
+      state.makes = [];
+    },
+  },
   extraReducers: (builder) => {
     // pending
     builder
@@ -75,5 +82,7 @@ export const makeSlice = createSlice({
       });
   },
 });
+
+export const { resetBodyType } = makeSlice.actions;
 
 export default makeSlice.reducer;

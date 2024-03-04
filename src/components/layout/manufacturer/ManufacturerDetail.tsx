@@ -20,7 +20,7 @@ const ManufacturerDetail = ({ id }: { id?: string }) => {
 
   useEffect(() => {
     dispatch(fetchManufacturerDetails(id));
-    dispatch(fetchMakesForManufacturers(id));
+    dispatch(fetchMakesForManufacturers({ id }));
   }, [dispatch]);
 
   if (loading) return <h2>Loading...</h2>;

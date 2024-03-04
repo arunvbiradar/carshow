@@ -25,7 +25,7 @@ const MakeDetails = ({ makeId }: { makeId?: string }) => {
       <SectionTitle>Manufacturers</SectionTitle>
       {makeDetails.map((make) => (
         <div className="mb-8">
-          <h2 className="text-2xl capitalize mb-2 capitalize">
+          <h2 className="text-2xl mb-2 capitalize">
             {make.Make_Name.toLocaleLowerCase()}
           </h2>
           <h3 className="">{make.Mfr_Name.toLocaleLowerCase()}</h3>

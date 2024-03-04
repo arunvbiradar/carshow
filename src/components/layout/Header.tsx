@@ -9,7 +9,7 @@ const Header = () => {
       <nav>
         <ul className="flex gap-6 font-semibold">
           <li>
-            <Link to="/all-makes">Makes</Link>
+            <Link to="/">Makes</Link>
           </li>
           <li>
             <Link to="/all-manufacturers">Manufacturers</Link>

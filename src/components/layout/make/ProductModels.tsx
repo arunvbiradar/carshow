@@ -2,10 +2,8 @@ import React, { useEffect } from "react";
 import ProductCard from "./ProductCard";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../lib/store";
-import {
-  fetchModelsForMake,
-  fetchTypesForMake,
-} from "../../../lib/slices/modelSlice";
+import { fetchModelsForMake } from "../../../lib/slices/modelSlice";
+import SectionTitle from "../../ui/SectionTitle";
 const ProductModels = ({ makeId }: { makeId?: string }) => {
   const dispatch = useDispatch<AppDispatch>();
 
@@ -15,7 +13,6 @@ const ProductModels = ({ makeId }: { makeId?: string }) => {
 
   useEffect(() => {
     dispatch(fetchModelsForMake(makeId));
-    dispatch(fetchTypesForMake(makeId));
   }, [dispatch]);
 
   if (loading) return <h2 className="mb-12">Loading...</h2>;
@@ -23,6 +20,9 @@ const ProductModels = ({ makeId }: { makeId?: string }) => {
 
   return (
     <>
+      {models?.length > 0 && (
+        <SectionTitle>{models[0].Make_Name} Models</SectionTitle>
+      )}
       <div className="flex flex-wrap -mx-4 mb-12">
         {models?.length > 0 &&
           models?.map((model) => (

@@ -1,3 +1,7 @@
+export interface MakeCar {
+  MakeId: number;
+  MakeName: string;
+}
 export interface Make {
   Make_ID: number;
   Make_Name: string;
@@ -24,7 +28,7 @@ export interface SpecificationState {
 }
 
 export interface MakeState {
-  makes: Make[];
+  makes: MakeCar[];
   makeDetails: MakeDetail[];
   loading: boolean;
   error: string | null;

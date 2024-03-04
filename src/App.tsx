@@ -1,6 +1,5 @@
 import React from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
 import Make from "./pages/Make";
 import NotFound from "./pages/NotFound";
 import AllMakes from "./pages/AllMakes";
@@ -13,8 +12,7 @@ function App() {
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/all-makes" element={<AllMakes />} />
+        <Route path="/" element={<AllMakes />} />
         <Route path="/make/:makeName/:makeId" element={<Make />} />
         <Route path="/all-manufacturers" element={<AllManufacturers />} />
         <Route path="/manufacturer/:name/:id" element={<Manufacturer />} />

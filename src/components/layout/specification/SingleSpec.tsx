@@ -21,19 +21,24 @@ const SingleSpec = ({ id }: { id?: string }) => {
   if (loading) return <h2 className="mb-12">Loading...</h2>;
   if (error) return <h2 className="mb-12">{error}</h2>;
 
-  console.log(singleSpec);
-
   return (
     <div className="px-2 mb-12">
       <div className="flex flex-row flex-wrap -mx-2">
-        {singleSpec.map((spec) => (
-          <div key={"type.Name"} className="w-full md:w-1/2 xl:w-1/3 px-2 mb-4">
-            <div className="p-4 bg-gray-100 rounded-md">
-              <h2 className="font-bold text-lg mb-2">{spec.Name}</h2>
-              <p className="mb-2">{spec.ElementName}</p>
+        {singleSpec.length > 0 ? (
+          singleSpec.map((spec) => (
+            <div
+              key={"type.Name"}
+              className="w-full md:w-1/2 xl:w-1/3 px-2 mb-4"
+            >
+              <div className="p-4 bg-gray-100 rounded-md">
+                <h2 className="font-bold text-lg mb-2">{spec.Name}</h2>
+                <p className="mb-2">{spec.ElementName}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <h2 className="text-2xl">No data found</h2>
+        )}
       </div>
     </div>
   );

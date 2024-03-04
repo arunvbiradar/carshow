@@ -12,7 +12,7 @@ const AllManufacturers = () => {
       <Header />
       <Breadcrumb levels={1} page="Manufacturers" />
       <PageTitle>Manufacturers</PageTitle>
-      <section>
+      <section className="shrink-0 mb-auto">
         <Manufacturers />
       </section>
       <Footer />

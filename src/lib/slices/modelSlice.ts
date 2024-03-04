@@ -37,10 +37,14 @@ export const fetchTypesForMake = createAsyncThunk(
   },
 );
 
-export const modelSlide = createSlice({
+export const modelSlice = createSlice({
   name: "modelSlicer",
   initialState,
-  reducers: {},
+  reducers: {
+    resetModels(state) {
+      state.models = [];
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchModelsForMake.pending, (state) => {
@@ -76,4 +80,6 @@ export const modelSlide = createSlice({
   },
 });
 
-export default modelSlide.reducer;
+export const { resetModels } = modelSlice.actions;
+
+export default modelSlice.reducer;

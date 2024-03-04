@@ -13,9 +13,13 @@ const Manufacturer = () => {
   return (
     <BoxLayout>
       <Header />
-      <Breadcrumb levels={1} page="Manufacturer" />
+      <Breadcrumb
+        levels={1}
+        page={name}
+        levelPage={{ url: "all-manufacturers", page: "manufacturer" }}
+      />
       <PageTitle>{name}</PageTitle>
-      <section>
+      <section className="mb-auto shrink-0">
         <ManufacturerDetail id={id} />
       </section>
       <Footer />

@@ -24,30 +24,37 @@ const Specifications = () => {
   if (error) return <h2 className="mb-12">{error}</h2>;
 
   return (
-    <div className="flex flex-wrap -mx-4">
-      {specs.length > 0 &&
-        specs.map((spec) => (
-          <div
-            key={spec.ID}
-            className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/2 px-4 mb-4"
-          >
-            <Link
-              to={`/specification/${spec.Name}/${spec.ID}`}
-              className="block"
+    <>
+      {specs && (
+        <p className="mb-8">
+          <strong>{specs.length}</strong> specs found
+        </p>
+      )}
+      <div className="flex flex-wrap -mx-4">
+        {specs.length > 0 &&
+          specs.map((spec) => (
+            <div
+              key={spec.ID}
+              className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/2 px-4 mb-4"
             >
-              <div className="bg-gray-100 border-b-2 p-4 rounded-md">
-                <h2 className="font-bold text-xl mb-2">{spec.Name}</h2>
-                <p>
-                  <strong>{spec.GroupName}</strong>
-                </p>
-                <p className="mb-2 spec-description">
-                  {parse(spec.Description)}
-                </p>
-              </div>
-            </Link>
-          </div>
-        ))}
-    </div>
+              <Link
+                to={`/specification/${spec.Name}/${spec.ID}`}
+                className="block"
+              >
+                <div className="bg-gray-100 border-b-2 p-4 rounded-md">
+                  <h2 className="font-bold text-xl mb-2">{spec.Name}</h2>
+                  <p>
+                    <strong>{spec.GroupName}</strong>
+                  </p>
+                  <p className="mb-2 spec-description">
+                    {parse(spec.Description)}
+                  </p>
+                </div>
+              </Link>
+            </div>
+          ))}
+      </div>
+    </>
   );
 };
 

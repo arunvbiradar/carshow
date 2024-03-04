@@ -12,7 +12,9 @@ const AllSpecifications = () => {
       <Header />
       <Breadcrumb levels={1} page="Specifications" />
       <PageTitle>Specifications</PageTitle>
-      <Specifications />
+      <section className="mb-auto shrink-0">
+        <Specifications />
+      </section>
       <Footer />
     </BoxLayout>
   );
