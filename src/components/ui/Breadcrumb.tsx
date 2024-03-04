@@ -10,12 +10,10 @@ const Breadcrumb = ({ levels, page }: { levels: number; page: string }) => {
           <Link to="/">
             <IoHome />
           </Link>
-          {/* <Link to="/">Home</Link> */}
         </li>
         {levels > 1 && (
           <li className="text-gray-700  flex items-center font-medium after:content-['/'] after:mx-3">
             <a href="">Home</a>
-            {/* <Link to="/">Home</Link> */}
           </li>
         )}
         <li className="text-gray-500">{page}</li>

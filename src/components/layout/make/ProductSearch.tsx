@@ -1,8 +1,25 @@
-import React from "react";
+import React, { ChangeEvent, useEffect } from "react";
 import { IoCarSportOutline } from "react-icons/io5";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { AppDispatch, RootState } from "../../../lib/store";
+import { fetchMakes } from "../../../lib/slices/makeSlice";
+import { fetchModelsForMake } from "../../../lib/slices/modelSlice";
 
 const ProductSearch = ({ page }: { page: string }) => {
+  const dispatch = useDispatch<AppDispatch>();
+  const makes = useSelector((state: RootState) => state.makes.makes);
+  const models = useSelector((state: RootState) => state.models.models);
+
+  useEffect(() => {
+    dispatch(fetchMakes());
+  }, [dispatch]);
+
+  const handleSelectMake = (e: ChangeEvent<HTMLSelectElement>) => {
+    e.preventDefault();
+    dispatch(fetchModelsForMake(e.target.value));
+  };
+
   return (
     <section
       className={`${page === "search" && "sticky"} top-14 z-50 bg-gray-100 p-4 rounded-md mb-16`}
@@ -12,26 +29,38 @@ const ProductSearch = ({ page }: { page: string }) => {
           <label htmlFor="make" className="font-bold mb-2 inline-block">
             Search by Make
           </label>
-          <select name="make" id="make" className="form-control">
+          <select
+            name="make"
+            id="make"
+            className="form-control"
+            onChange={handleSelectMake}
+          >
             <option>Select a make</option>
-            <option value="">Option1</option>
-            <option value="">Option2</option>
-            <option value="">Option3</option>
-            <option value="">Option4</option>
-            <option value="">Option5</option>
+            {makes &&
+              makes.map((make) => (
+                <option key={make.Make_ID} value={make.Make_ID}>
+                  {make.Make_Name}
+                </option>
+              ))}
           </select>
         </div>
         <div className="mb-6 px-4 w-1/2 lg:w-1/3 xl:w-1/4">
           <label htmlFor="model" className="font-bold mb-2 inline-block">
             Search by Model
           </label>
-          <select name="model" id="model" className="form-control">
+          <select
+            name="model"
+            id="model"
+            className="form-control"
+            disabled={models?.length <= 0 && true}
+          >
             <option>Select a model</option>
-            <option value="">Option1</option>
-            <option value="">Option2</option>
-            <option value="">Option3</option>
-            <option value="">Option4</option>
-            <option value="">Option5</option>
+            {models?.length > 0 &&
+              models.map((models) => (
+                <option key={models.Model_ID} value={models.Model_ID}>
+                  {models.Model_Name}
+                </option>
+              ))}
           </select>
         </div>
         <div className="mb-6 px-4 w-1/2 lg:w-1/3 xl:w-1/4">

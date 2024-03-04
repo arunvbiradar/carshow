@@ -9,16 +9,13 @@ const Header = () => {
       <nav>
         <ul className="flex gap-6 font-semibold">
           <li>
-            <Link to="/make">Make</Link>
+            <Link to="/all-makes">Makes</Link>
           </li>
           <li>
-            <Link to="/all-makes">All Makes</Link>
+            <Link to="/all-manufacturers">Manufacturers</Link>
           </li>
           <li>
-            <Link to="/model">Model</Link>
-          </li>
-          <li>
-            <Link to="/all-models">All Models</Link>
+            <Link to="/all-specifications">Specifications</Link>
           </li>
         </ul>
       </nav>
