@@ -1,16 +1,18 @@
-# **Car Showcase**
+# Car Showcase
 
-- **GitHub Page Link:** [Car Showcase](https://arunvbiradar.github.io/carshow/)
+- **GitHub Page Link:** [Car Showcase](https://arunvbiradar.github.io/carshow/){:target="\_blank" rel="noopener"}
 
 The project revolves around fetching and managing data related to vehicles, including makes, manufacturers, models, and specifications. It aims to provide a comprehensive web application or service offering information about various aspects of vehicles.
 
-**Project Deployment:**
+## Project Deployment:
+
 The frontend of the application is deployed using GitHub Pages, enabling easy access and sharing of the application online.
 
-**Purpose:**
+## Purpose:
+
 The project serves as a platform to explore and learn new features of functional components, Redux Toolkit, and TypeScript within a real-world application context.
 
-**Frontend Technologies Used:**
+## Frontend Technologies Used:
 
 - **React**: JavaScript library for building user interfaces.
 - **TypeScript**: A superset of JavaScript that adds static typing to the language, enhancing code readability and maintainability.
@@ -20,7 +22,7 @@ The project serves as a platform to explore and learn new features of functional
 - **React Router DOM**: Library for declarative routing in React applications, with support for hash routing (HashRouter) among other routing techniques.
 - **GitHub Pages**: Hosting service provided by GitHub for deploying static websites directly from GitHub repositories.
 
-**Commands:**
+## Commands:
 
 - `npm create vite@latest .`: Creates a new Vite project in the current directory.
 - `npm install -D tailwindcss postcss autoprefixer`: Installs Tailwind CSS along with its required PostCSS plugins for styling.
@@ -29,7 +31,7 @@ The project serves as a platform to explore and learn new features of functional
 - `npm install @reduxjs/toolkit react-redux`: Installs Redux Toolkit and React Redux for efficient state management in React applications.
 - `npm i axios`: Installs Axios for making HTTP requests to the server.
 
-**Packages:**
+## Packages:
 
 - **tailwind**: Utility-first CSS framework for designing responsive and custom user interfaces.
 - **react-router-dom**: Library for declarative routing in React applications.
