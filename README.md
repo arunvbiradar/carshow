@@ -1,6 +1,6 @@
 # Car Showcase
 
-- **GitHub Page Link:** [Car Showcase](https://arunvbiradar.github.io/carshow/){:target="\_blank" rel="noopener"}
+- **GitHub Page Link:** [Car Showcase](https://arunvbiradar.github.io/carshow/)
 
 The project revolves around fetching and managing data related to vehicles, including makes, manufacturers, models, and specifications. It aims to provide a comprehensive web application or service offering information about various aspects of vehicles.
 
