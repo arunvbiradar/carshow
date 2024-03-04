@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import makesData from "./../../data/makesData";
 import axios from "axios";
 import { Make, MakeDetail, MakeState } from "../../types";
 
